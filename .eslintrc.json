@@ -1,3 +1,94 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "env": { "browser": true, "es2020": true, "node": true },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended"
+  ],
+  "plugins": ["unused-imports", "import"],
+  "ignorePatterns": [
+    "dist",
+    ".eslintrc.json",
+    "*.html",
+    "*.cjs",
+    "*.mjs",
+    "*.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/assets/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/apis/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/app/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/components/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/hooks/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/constants/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/lib/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/utils/*",
+            "group": "internal",
+            "position": "after"
+          },
+          {
+            "pattern": "@/types/*",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ]
+  }
 }
