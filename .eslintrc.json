@@ -20,6 +20,14 @@
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "no-var": "error",
+    "camelcase": ["error", { "properties": "always" }],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "space-before-blocks": [2, "always"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
     "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "import/order": [
