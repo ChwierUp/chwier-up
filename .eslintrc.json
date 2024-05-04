@@ -7,7 +7,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:@tanstack/eslint-plugin-query/recommended"
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "plugin:react/recommended"
   ],
   "plugins": ["unused-imports", "import"],
   "ignorePatterns": [
@@ -20,6 +21,19 @@
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": ["function-declaration"] }
+    ],
+    "react/jsx-handler-names": [
+      "error",
+      {
+        "eventHandlerPrefix": ["on", "handle"],
+        "checkLocalVariables": true
+      }
+    ],
+    "react/jsx-key": "error",
     "no-var": "error",
     "camelcase": ["error", { "properties": "always" }],
     "padding-line-between-statements": [
