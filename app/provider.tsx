@@ -10,7 +10,7 @@ interface Props {
   children: ReactNode;
 }
 
-function Provider({ children }: Props) {
+export default function Provider({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       {children}
@@ -18,5 +18,3 @@ function Provider({ children }: Props) {
     </QueryClientProvider>
   );
 }
-
-export default Provider;
