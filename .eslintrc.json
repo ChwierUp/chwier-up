@@ -26,13 +26,6 @@
       2,
       { "namedComponents": ["function-declaration"] }
     ],
-    "react/jsx-handler-names": [
-      "error",
-      {
-        "eventHandlerPrefix": ["on", "handle"],
-        "checkLocalVariables": true
-      }
-    ],
     "react/jsx-key": "error",
     "no-var": "error",
     "camelcase": ["error", { "properties": "always" }],
