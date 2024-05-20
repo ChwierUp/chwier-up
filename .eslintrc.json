@@ -1,0 +1,69 @@
+{
+  "root": true,
+  "env": { "browser": true, "es2020": true, "node": true },
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
+    "plugin:react/recommended"
+  ],
+  "plugins": ["unused-imports", "import"],
+  "ignorePatterns": [
+    "dist",
+    ".eslintrc.json",
+    "*.html",
+    "*.cjs",
+    "*.mjs",
+    "*.js"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": ["function-declaration"] }
+    ],
+    "react/jsx-key": "error",
+    "no-var": "error",
+    "camelcase": ["error", { "properties": "always" }],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "*", "next": "return" }
+    ],
+    "space-before-blocks": [2, "always"],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "unused-imports/no-unused-imports": "error",
+    "@typescript-eslint/no-unused-vars": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "type",
+          "unknown"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react*",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@*/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["builtin"]
+      }
+    ]
+  }
+}
