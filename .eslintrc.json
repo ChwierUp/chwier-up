@@ -21,6 +21,7 @@
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/function-component-definition": [
       2,
@@ -57,7 +58,7 @@
             "position": "before"
           },
           {
-            "pattern": "@*/**",
+            "pattern": "@/*/**",
             "group": "internal",
             "position": "after"
           }
