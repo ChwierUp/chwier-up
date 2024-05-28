@@ -1,6 +1,6 @@
 import Tip from "@/public/tip.svg";
 import Logo from "@/public/logo.svg";
-import ProfileIcon from "./ProfileIcon";
+import ProfileIcon from "./ProfileButton";
 
 export default function Header() {
   return (
