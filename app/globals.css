@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply flex flex-col items-center bg-bg-100 text-text-100;
+  }
+
   :root {
     --primary-100: 30, 100%, 60%;
     --primary-200: 30, 100%, 70%;
