@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Header from "@/components/Header";
 import Provider from "./provider";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -17,8 +18,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={inter.className}>
-        <Provider>{children}</Provider>
+      <body className={`${inter.className}`}>
+        <Provider>
+          <Header />
+          {children}
+        </Provider>
       </body>
     </html>
   );
