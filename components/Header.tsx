@@ -1,4 +1,3 @@
-import Tip from "@/public/tip.svg";
 import Logo from "@/public/logo.svg";
 import ProfileIcon from "./ProfileButton";
 
@@ -11,10 +10,7 @@ export default function Header() {
             className="cursor-pointer fill-black dark:fill-white"
             aria-label="취얼업 로고"
           />
-          <Tip
-            className="ml-10 cursor-pointer fill-black dark:fill-white"
-            aria-label="tip"
-          />
+          <p className="ml-10 cursor-pointer fill-black dark:fill-white">Tip</p>
         </figure>
         <ProfileIcon className="rounded-full bg-bg-100 dark:bg-bg-100" />
       </div>
