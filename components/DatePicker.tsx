@@ -8,13 +8,13 @@ import { Button } from "@/components/button";
 import { Calendar } from "@/components/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
 
-import { DateForCalendar } from "@/types/dateForCalendar";
+import { CalendarDate } from "@/types/calendarDate";
 import { cn } from "@/lib/utils";
 import DateSlider from "./DateSlider";
 
 export function DatePicker() {
   const [date, setDate] = useState<Date | undefined>(new Date());
-  const dateForSlider: DateForCalendar = {
+  const dateForSlider: CalendarDate = {
     year: date!.getFullYear(),
     month: date!.getMonth(),
     day: date!.getDate(),

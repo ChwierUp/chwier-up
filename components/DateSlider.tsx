@@ -7,13 +7,13 @@ import {
 } from "keen-slider/react";
 import { cn } from "@/lib/utils";
 
-import { DateForCalendar } from "@/types/dateForCalendar";
+import { CalendarDate } from "@/types/calendarDate";
 import { Button } from "./button";
 
 import "keen-slider/keen-slider.min.css";
 
 interface DateSliderProps {
-  currentDate: DateForCalendar;
+  currentDate: CalendarDate;
   onChangeDate: (day: number) => void;
 }
 
