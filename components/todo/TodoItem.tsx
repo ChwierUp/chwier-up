@@ -8,7 +8,7 @@ import {
   Undo2Icon,
 } from "lucide-react";
 
-import { useHoverTodo } from "@/hooks/useHoverTodo";
+import { useHover } from "@/hooks/useHover";
 import { cn } from "@/lib/utils";
 import { useHandleTodo } from "@/hooks/useHandleTodo";
 
@@ -21,7 +21,7 @@ import TodoCompleteButton from "./TodoCompleteButton";
 import CategorySelector from "./CategorySelector";
 
 export default function TodoItem() {
-  const { ref, isHover } = useHoverTodo();
+  const { ref, isHover } = useHover();
   const { isCompleted, isEditing, handleToggleComplete, handleToggleEdit } =
     useHandleTodo();
 

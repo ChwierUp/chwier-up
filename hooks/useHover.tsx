@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
-export const useHoverTodo = () => {
+export const useHover = () => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [isHover, setIsHover] = useState(false);
 
