@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, CardContent, CardHeader } from "../card";
-import Profile from "../profile/Profile";
+import Profile from "../Profile";
 
 import { Input } from "../input";
 import { Button } from "../button";

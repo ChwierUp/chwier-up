@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../card";
-import Profile from "../profile/Profile";
+import Profile from "../Profile";
 import { Button } from "../button";
 import TodoCard from "./TodoCard";
 
