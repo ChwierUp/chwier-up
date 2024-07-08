@@ -39,11 +39,11 @@ export default function ArticleCard({
             </h1>
             <Separator
               orientation="vertical"
-              className="h-4 dark:bg-text-200"
+              className="h-4 bg-text-100 dark:bg-text-200"
             />
             <aside className="text-xs">{format(createdAt, "yyyy.LL.dd")}</aside>
           </header>
-          <main className="w-full">
+          <main className="w-full space-y-2">
             <h1 className="truncate text-lg">{title}</h1>
             <h2 className="truncate text-xs text-text-200">{content}</h2>
           </main>
