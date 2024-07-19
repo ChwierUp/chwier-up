@@ -35,6 +35,7 @@ const config = {
         active: "hsl(var(--active))",
         box: "hsl(var(--box))",
         outline: "hsl(var(--outline))",
+        subbox: "hsl(var(--subbox))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
