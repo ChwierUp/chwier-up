@@ -4,7 +4,7 @@ import { useState } from "react";
 import { format } from "date-fns";
 import { ChevronDown as ChevronDownIcon } from "lucide-react";
 
-import { Button } from "@/components/button";
+import { Button } from "@/components/Button";
 import { Calendar } from "@/components/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/popover";
 
@@ -33,9 +33,9 @@ export function DatePicker() {
         <Popover>
           <PopoverTrigger asChild>
             <Button
-              variant={"outline"}
+              variant="ghost"
               className={cn(
-                "w-fit items-center justify-start rounded-xl border-none text-left text-3xl font-semibold",
+                "hover:bg-subbg dark:hover:bg-subbg w-fit items-center justify-start rounded-xl border-none bg-inherit text-left text-3xl font-semibold",
                 !date && "text-muted-foreground",
               )}
             >
@@ -50,6 +50,7 @@ export function DatePicker() {
               onSelect={setDate}
               required={true}
               initialFocus
+              className="bg-mainbg"
             />
           </PopoverContent>
         </Popover>
