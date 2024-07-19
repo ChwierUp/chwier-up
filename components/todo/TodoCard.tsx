@@ -15,7 +15,7 @@ export default function TodoCard() {
       <CardHeader className="bg-subbox">
         <Profile imageUrl={"https://github.com/shadcn.png"} name="문휘식" />
       </CardHeader>
-      <CardContent className="bg-subbox flex justify-between gap-10">
+      <CardContent className="flex justify-between gap-10 bg-subbox">
         <aside className="flex flex-col gap-3">
           <header className="flex gap-3">
             <CategorySelector />
@@ -23,7 +23,7 @@ export default function TodoCard() {
               <Input
                 type="text"
                 placeholder="어떤 걸 할 예정인가요?"
-                className="bg-subbg dark:bg-subbg dark:border-outline dark:placeholder:text-[#C1C1C1]"
+                className="bg-subbg dark:border-outline dark:bg-subbg dark:placeholder:text-[#C1C1C1]"
               />
               <Button
                 variant="ghost"
@@ -41,7 +41,7 @@ export default function TodoCard() {
             <TodoItem />
           </main>
         </aside>
-        <div className="dark:bg-outline w-[1px] bg-slate-200" />
+        <div className="w-[1px] bg-slate-200 dark:bg-outline" />
         <aside className="flex grow items-center justify-center">
           <ProgressBar />
         </aside>

@@ -35,7 +35,7 @@ export function DatePicker() {
             <Button
               variant="ghost"
               className={cn(
-                "hover:bg-subbg dark:hover:bg-subbg w-fit items-center justify-start rounded-xl border-none bg-inherit text-left text-3xl font-semibold",
+                "w-fit items-center justify-start rounded-xl border-none bg-inherit text-left text-3xl font-semibold hover:bg-subbg dark:hover:bg-subbg",
                 !date && "text-muted-foreground",
               )}
             >

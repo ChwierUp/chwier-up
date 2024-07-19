@@ -30,7 +30,7 @@ export default function TodoItem() {
       className="flex items-center justify-between gap-3"
       ref={ref as MutableRefObject<HTMLDivElement>}
     >
-      <Card className="dark:border-outline bg-subbg dark:bg-subbg flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between shadow-md">
+      <Card className="flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between bg-subbg shadow-md dark:border-outline dark:bg-subbg">
         <CardContent className="grow p-4">
           {!isEditing ? (
             <div className="flex flex-row-reverse items-center justify-between gap-5">

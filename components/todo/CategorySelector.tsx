@@ -16,7 +16,7 @@ export default function CategorySelector({
 }: CategorySelectorProps) {
   return (
     <Select defaultValue={defaultValue}>
-      <SelectTrigger className="dark:border-outline dark:bg-subbg w-28">
+      <SelectTrigger className="w-28 dark:border-outline dark:bg-subbg">
         <SelectValue placeholder="카테고리" />
       </SelectTrigger>
       <SelectContent className="dark:border-outline dark:bg-subbg">

@@ -1,7 +1,7 @@
 import React from "react";
 
 import { CircleCheckIcon } from "lucide-react";
-import { Button } from "../button";
+import { Button } from "../Button";
 
 interface TodoButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
