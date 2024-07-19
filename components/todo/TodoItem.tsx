@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 import { useHandleTodo } from "@/hooks/useHandleTodo";
 
 import { Card, CardContent } from "../card";
-import { Button } from "../button";
+import { Button } from "../Button";
 import { Input } from "../input";
 
 import TodoCompleteButton from "./TodoCompleteButton";
@@ -30,7 +30,7 @@ export default function TodoItem() {
       className="flex items-center justify-between gap-3"
       ref={ref as MutableRefObject<HTMLDivElement>}
     >
-      <Card className="flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between shadow-md dark:border-[#616161] dark:bg-[#464650] ">
+      <Card className="dark:border-outline bg-subbg dark:bg-subbg flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between shadow-md">
         <CardContent className="grow p-4">
           {!isEditing ? (
             <div className="flex flex-row-reverse items-center justify-between gap-5">
@@ -47,7 +47,8 @@ export default function TodoItem() {
               <Input
                 type="text"
                 defaultValue="전시회 예매하기"
-                className="dark:border-[#616161] dark:bg-[#464650] dark:placeholder:text-[#C1C1C1]"
+                placeholder="어떤 걸 할 예정인가요?"
+                className="dark:border-outline dark:bg-subbg dark:placeholder:text-[#C1C1C1]"
               />
               <CategorySelector defaultValue="기타" />
             </aside>
