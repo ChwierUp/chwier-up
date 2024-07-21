@@ -1,14 +1,115 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+  schemas   = ["next_auth", "public"]
+}
+
+model accounts {
+  id                 String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?
+  access_token       String?
+  expires_at         BigInt?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
+  userId             String? @db.Uuid
+  users              users?  @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@unique([provider, providerAccountId], map: "provider_unique")
+  @@schema("next_auth")
+}
+
+model sessions {
+  id           String   @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  expires      DateTime @db.Timestamptz(6)
+  sessionToken String   @unique(map: "sessiontoken_unique")
+  userId       String?  @db.Uuid
+  users        users?   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction)
+
+  @@schema("next_auth")
+}
+
+model users {
+  id            String     @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  name          String?
+  email         String?    @unique(map: "email_unique")
+  emailVerified DateTime?  @db.Timestamptz(6)
+  image         String?
+  accounts      accounts[]
+  sessions      sessions[]
+  articles      articles[]
+  todos         todos[]
+
+  @@schema("next_auth")
+}
+
+model verification_tokens {
+  identifier String?
+  token      String   @id
+  expires    DateTime @db.Timestamptz(6)
+
+  @@unique([token, identifier], map: "token_identifier_unique")
+  @@schema("next_auth")
+}
+
+model articles {
+  article_id BigInt           @id @unique @default(autoincrement())
+  user_id    String           @db.Uuid
+  created_at DateTime         @default(now()) @db.Timestamptz(6)
+  updated_at DateTime         @default(now()) @db.Timestamptz(6)
+  title      String
+  url        String
+  content    String?
+  category   article_Category
+  img_url    String?
+  user_name  String
+  user_image String
+  users      users            @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "articles_user_id_fkey1")
+
+  @@schema("public")
+}
+
+/// This model contains row level security and requires additional setup for migrations. Visit https://pris.ly/d/row-level-security for more info.
+model todos {
+  id          Int      @id @unique @default(autoincrement())
+  user_id     String   @db.Uuid
+  task        String
+  is_complete Boolean? @default(false)
+  created_at  DateTime @default(dbgenerated("(now() AT TIME ZONE 'kst'::text)")) @db.Timestamptz(6)
+  category    String
+  user_name   String
+  date        String   @default(dbgenerated("(now() AT TIME ZONE 'kst'::text)"))
+  users       users    @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+
+  @@schema("public")
+}
+
+/// This enum is commented in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
+enum article_Category {
+  React
+  TypeScript
+  JavaScript
+  Vue
+  Nextjs
+  Nuxtjs
+  Carrer
+  Soft_Skill   @map("Soft Skill")
+  CSS
+  Optimization
+  Clean_Code   @map("Clean Code")
+
+  @@map("article Category")
+  @@schema("public")
 }
