@@ -1,0 +1,20 @@
+"use client";
+
+import React from "react";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import LandingLight from "@/public/landing-light.png";
+import LandingDark from "@/public/landing-dark.png";
+
+export default function LandingLogo() {
+  const { theme } = useTheme();
+
+  return (
+    <Image
+      src={theme === "light" ? LandingLight : LandingDark}
+      alt="landing-image"
+      width={1200}
+      height={500}
+    />
+  );
+}
