@@ -1,11 +1,12 @@
 /* eslint-disable camelcase */
 
+import { auth } from "@/auth";
 import prisma from "@/utils/supabase/prismaClient";
 import {
   TodoDeleteRequestType,
   TodoPatchRequestType,
   TodoPostRequestType,
-} from "./_types/RequestType";
+} from "./_types/dto";
 
 export async function GET(req: Request) {
   try {
@@ -53,20 +54,16 @@ export async function GET(req: Request) {
 
 export async function POST(req: Request) {
   try {
-    const {
-      task,
-      is_complete,
-      category,
-      user_id,
-      user_name,
-    }: TodoPostRequestType = await req.json();
+    const session = await auth();
+    const { task, is_complete, category, user_name }: TodoPostRequestType =
+      await req.json();
 
     const createTodo = await prisma.todos.create({
       data: {
         task,
         is_complete,
         category,
-        user_id,
+        user_id: session?.userId,
         user_name,
       },
     });
@@ -83,7 +80,8 @@ export async function POST(req: Request) {
 
 export async function PATCH(req: Request) {
   try {
-    const { id, user_id, is_complete, category, task }: TodoPatchRequestType =
+    const session = await auth();
+    const { todo_id, is_complete, category, task }: TodoPatchRequestType =
       await req.json();
 
     const data: { is_complete?: boolean; category?: string; task?: string } =
@@ -94,8 +92,8 @@ export async function PATCH(req: Request) {
 
     const updatedTodo = await prisma.todos.updateMany({
       where: {
-        id,
-        user_id,
+        id: todo_id,
+        user_id: session?.userId,
       },
       data: data,
     });
@@ -126,11 +124,11 @@ export async function PATCH(req: Request) {
 
 export async function DELETE(req: Request) {
   try {
-    const { id }: TodoDeleteRequestType = await req.json();
+    const { todo_id }: TodoDeleteRequestType = await req.json();
 
     const deletedTodo = await prisma.todos.delete({
       where: {
-        id: id,
+        id: todo_id,
       },
     });
 
