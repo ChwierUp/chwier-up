@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply flex flex-col items-center bg-bg-100 text-text-100;
+  }
+
   :root {
     --primary-100: 30, 100%, 60%;
     --primary-200: 30, 100%, 70%;
@@ -14,6 +18,14 @@
     --bg-100: 0, 0%, 96%;
     --bg-200: 0, 0%, 92%;
     --bg-300: 0, 0%, 76%;
+
+    /* custom colors */
+    --mainbg: 0, 0%, 98%;
+    --subbg: 0, 0%, 100%;
+    --subgray: 0, 0%, 53%;
+    --active: 24, 100%, 50%;
+    --box: 0, 0%, 98%;
+    --outline: 0, 0%, 38%;
 
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
@@ -48,6 +60,14 @@
     --bg-100: 240, 15%, 20%;
     --bg-200: 240, 15%, 23%;
     --bg-300: 240, 15%, 25%;
+
+    /* custom colors */
+    --mainbg: 240, 15%, 17%;
+    --subbg: 240, 11%, 23%;
+    --subgray: 0, 0%, 72%;
+    --active: 24, 100%, 50%;
+    --box: 240, 7%, 29%;
+    --outline: 0, 0%, 38%;
 
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
