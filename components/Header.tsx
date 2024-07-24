@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "@/public/logo.svg";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/avatar";
 
 import {
   NavigationMenu,
@@ -21,7 +21,7 @@ const ROUTE_PAGE = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 z-10 h-16 w-full border-b border-accent-200 bg-bg-100 px-[113px]">
+    <header className="fixed top-0 z-10 h-16 w-full border-b border-accent-200 bg-mainbg px-[113px]">
       <div className="flex h-full w-full max-w-[1440px] items-center justify-between">
         <div className="flex shrink-0 items-center">
           <Logo
