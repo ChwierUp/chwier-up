@@ -4,13 +4,10 @@ import { cn } from "@/lib/utils";
 
 interface SearchBarProps {
   onSubmit: () => void;
-  className: string;
+  className?: string;
 }
 
-export default function SearchBar({
-  onSubmit,
-  className,
-}: Partial<SearchBarProps>) {
+export default function SearchBar({ onSubmit, className }: SearchBarProps) {
   return (
     <form
       className={cn("relative flex w-full items-center", className)}
