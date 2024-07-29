@@ -14,7 +14,7 @@ import { useHandleTodo } from "@/hooks/useHandleTodo";
 
 import { Card, CardContent } from "../card";
 import { Button } from "../button";
-import { Input } from "../input.copy";
+import { Input } from "../input";
 
 import TodoCompleteButton from "./TodoCompleteButton";
 
