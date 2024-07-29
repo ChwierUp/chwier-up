@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardContent, CardHeader } from "../card";
 import Profile from "../Profile";
 
-import { Input } from "../input";
+import { Input } from "../input.copy";
 import { Button } from "../button";
 
 import CategorySelector from "./CategorySelector";
