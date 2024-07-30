@@ -19,6 +19,8 @@
   "dependencies": {
     "@auth/supabase-adapter": "^1.4.1",
     "@prisma/client": "^5.13.0",
+    "@radix-ui/react-dialog": "^1.1.1",
+    "@radix-ui/react-label": "^2.1.0",
     "@supabase/ssr": "^0.4.0",
     "@supabase/supabase-js": "^2.44.3",
     "@radix-ui/react-popover": "^1.0.7",
