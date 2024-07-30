@@ -9,7 +9,7 @@ export default function ArticleLinkInput() {
       <Input
         id="link"
         placeholder="링크를 삽입해 주세요."
-        className="dark:border-[#616161] dark:bg-[#464650] dark:placeholder:text-[#C1C1C1]"
+        className="dark:border-outline dark:bg-box dark:placeholder:text-subgray"
       />
     </div>
   );

@@ -15,10 +15,10 @@ export default function CategorySelector() {
     <div className="space-y-2">
       <Label htmlFor="category">카테고리</Label>
       <Select>
-        <SelectTrigger className="w-24 dark:border-[#616161] dark:bg-[#464650]">
+        <SelectTrigger className="w-24 dark:border-outline dark:bg-box">
           <SelectValue id="category" placeholder="카테고리" />
         </SelectTrigger>
-        <SelectContent className="dark:border-[#616161] dark:bg-[#464650]">
+        <SelectContent className="dark:border-outline dark:bg-box">
           {CATEGORY_LIST.map((category) => (
             <SelectItem
               key={category}

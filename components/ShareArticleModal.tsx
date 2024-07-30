@@ -19,12 +19,12 @@ export default function ShareArticleModal() {
       <DialogTrigger asChild>
         <Button
           size="icon"
-          className="rounded-full shadow-lg dark:bg-bg-200 dark:hover:bg-bg-300"
+          className="rounded-full bg-subbg shadow-lg hover:bg-slate-100 dark:bg-subbg dark:hover:bg-subbg/95"
         >
-          <PlusIcon className="dark:text-white" />
+          <PlusIcon className="text-black dark:text-white" />
         </Button>
       </DialogTrigger>
-      <DialogContent className="w-96 rounded-3xl border-none shadow-lg dark:bg-bg-100 sm:rounded-3xl">
+      <DialogContent className="w-96 rounded-3xl border-none bg-subbg shadow-lg dark:bg-subbg sm:rounded-3xl">
         <DialogHeader>
           <DialogTitle className="font-bold">아티클 공유하기</DialogTitle>
         </DialogHeader>
@@ -35,7 +35,7 @@ export default function ShareArticleModal() {
         <DialogFooter>
           <Button
             type="submit"
-            className="dark:bg-primary-100 dark:text-white dark:hover:bg-primary-200"
+            className="bg-active hover:bg-active dark:bg-active dark:text-white dark:hover:bg-active"
           >
             등록
           </Button>
