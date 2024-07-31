@@ -1,22 +1,23 @@
 /* eslint-disable camelcase */
-import http from "./_core";
 import {
   TodoDeleteRequestType,
   TodoPatchRequestType,
   TodoPostRequestType,
   TodoResponseType,
-} from "./_types/dto";
+} from "@/types/dto/todo";
+
+import http from "./core";
 
 export const getAllTodo = async (date?: Date) => {
   if (date) {
     return await http.get<TodoResponseType>({
-      url: "todos",
+      url: "todo",
       params: { date },
     });
   }
 
   return await http.get<TodoResponseType>({
-    url: "todos",
+    url: "todo",
   });
 };
 
@@ -27,7 +28,7 @@ export const createTodo = async ({
   user_name,
 }: TodoPostRequestType) => {
   return await http.post<void>({
-    url: "todos",
+    url: "todo/create",
     data: {
       task,
       is_complete,
@@ -44,7 +45,7 @@ export const updateTodo = async ({
   task,
 }: TodoPatchRequestType) => {
   return await http.patch<TodoResponseType>({
-    url: "todos",
+    url: "todo",
     data: {
       todo_id,
       is_complete,
@@ -56,7 +57,7 @@ export const updateTodo = async ({
 
 export const deleteTodo = async ({ todo_id }: TodoDeleteRequestType) => {
   return await http.delete<void>({
-    url: "todos",
+    url: "todo",
     data: { todo_id },
   });
 };
