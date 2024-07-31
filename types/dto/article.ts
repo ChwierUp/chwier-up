@@ -1,4 +1,4 @@
-export interface Article {
+export interface ArticleResponseType {
   article_id: string;
   user_id: string;
   user_name: string;
@@ -11,15 +11,9 @@ export interface Article {
   category: string;
 }
 
-export interface ArticlePostParams {
+export interface ArticlePostRequestType {
   url: string;
   category: string;
-  ogImage: string | null;
-  ogTitle: string | null;
-  ogDescription: string | null;
-}
-
-export interface OgData {
   ogImage: string | null;
   ogTitle: string | null;
   ogDescription: string | null;
