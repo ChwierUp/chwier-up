@@ -27,14 +27,14 @@ export default async function Header() {
     : "https://github.com/shadcn.png";
 
   return (
-    <header className="fixed top-0 z-10 h-16 w-full border-b border-accent-200 bg-bg-100 px-[113px]">
+    <header className="fixed top-0 z-10 h-16 w-full border-b border-accent-200 bg-mainbg px-[113px]">
       <div className="flex h-full w-full max-w-[1440px] items-center justify-between">
         <div className="flex shrink-0 items-center">
           <Logo
             className="cursor-pointer fill-black dark:fill-white"
             aria-label="취얼업 로고"
           />
-          <div className="ml-8 h-5 border border-text-100" />
+          <div className="ml-8 h-5 border border-subgray" />
           <NavigationMenu className="ml-3">
             <NavigationMenuList>
               {ROUTE_PAGE.map(({ path, pageName }) => (

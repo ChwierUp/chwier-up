@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply flex flex-col items-center bg-bg-100 text-text-100;
+    @apply flex flex-col items-center bg-mainbg text-text-dark dark:text-text-light;
   }
 
   :root {
@@ -13,7 +13,6 @@
     --primary-300: 60, 100%, 90%;
     --accent-100: 0, 0%, 96%;
     --accent-200: 0, 0%, 57%;
-    --text-100: 210, 5%, 13%;
     --text-200: 210, 3%, 27%;
     --bg-100: 0, 0%, 96%;
     --bg-200: 0, 0%, 92%;
@@ -26,6 +25,7 @@
     --active: 24, 100%, 50%;
     --box: 0, 0%, 98%;
     --outline: 0, 0%, 38%;
+    --text-dark: 210, 5%, 13%;
 
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
@@ -55,7 +55,6 @@
     --primary-300: 60, 100%, 90%;
     --accent-100: 0, 0%, 96%;
     --accent-200: 0, 0%, 57%;
-    --text-100: 0, 0%, 100%;
     --text-200: 0, 0%, 88%;
     --bg-100: 240, 15%, 20%;
     --bg-200: 240, 15%, 23%;
@@ -68,6 +67,7 @@
     --active: 24, 100%, 50%;
     --box: 240, 7%, 29%;
     --outline: 0, 0%, 38%;
+    --text-light: 0, 0%, 100%;
 
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
