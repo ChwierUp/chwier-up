@@ -22,6 +22,9 @@ const ROUTE_PAGE = [
 
 export default async function Header() {
   const session = await auth();
+  const avatarImage = session?.user?.image
+    ? session.user.image
+    : "https://github.com/shadcn.png";
 
   return (
     <header className="fixed top-0 z-10 h-16 w-full border-b border-accent-200 bg-bg-100 px-[113px]">
@@ -43,13 +46,7 @@ export default async function Header() {
           </NavigationMenu>
         </div>
         <Avatar className="h-8 w-8">
-          <AvatarImage
-            src={
-              session?.user?.image
-                ? session.user.image
-                : "https://github.com/shadcn.png"
-            }
-          />
+          <AvatarImage src={avatarImage} />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </div>
