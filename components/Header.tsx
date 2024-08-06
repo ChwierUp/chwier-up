@@ -28,7 +28,7 @@ export default function Header() {
             className="cursor-pointer fill-black dark:fill-white"
             aria-label="취얼업 로고"
           />
-          <div className="ml-8 h-5 border border-text-100" />
+          <div className="ml-8 h-5 border border-subgray" />
           <NavigationMenu className="ml-3">
             <NavigationMenuList>
               {ROUTE_PAGE.map(({ path, pageName }) => (
