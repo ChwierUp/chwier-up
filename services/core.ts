@@ -14,6 +14,10 @@ const axiosInstance: AxiosInstance = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
+axiosInstance.interceptors.response.use((response) => {
+  return response.data;
+});
+
 const createApiMethod =
   (_axiosInstance: AxiosInstance, methodType: Method) =>
   <T>(config: AxiosRequestConfig): Promise<T> => {
