@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, CardContent, CardHeader } from "../card";
-import Profile from "../Profile";
+import { Card, CardContent, CardHeader } from "@/components/card";
+import Profile from "@/components/Profile";
 
-import { Input } from "../input";
-import { Button } from "../Button";
+import { Input } from "@/components/input";
+import { Button } from "@/components/Button";
 
 import CategorySelector from "./CategorySelector";
 import TodoItem from "./TodoItem";

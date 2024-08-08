@@ -12,10 +12,9 @@ import { useHover } from "@/hooks/useHover";
 import { cn } from "@/lib/utils";
 import { useHandleTodo } from "@/hooks/useHandleTodo";
 
-import { Card, CardContent } from "../card";
-import { Button } from "../Button";
-import { Input } from "../input";
-
+import { Card, CardContent } from "@/components/card";
+import { Input } from "@/components/input";
+import { Button } from "@/components/Button";
 import TodoCompleteButton from "./TodoCompleteButton";
 
 import CategorySelector from "./CategorySelector";

@@ -5,7 +5,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../select";
+} from "@/components/select";
 
 interface CategorySelectorProps {
   defaultValue?: string;

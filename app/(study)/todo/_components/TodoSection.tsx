@@ -1,9 +1,10 @@
 import React from "react";
 import { PlusIcon } from "lucide-react";
-import { Card, CardContent, CardHeader } from "../card";
-import Profile from "../Profile";
-import { Button } from "../Button";
-import { DatePicker } from "../DatePicker";
+
+import { Card, CardContent, CardHeader } from "@/components/card";
+import { DatePicker } from "@/components/DatePicker";
+import Profile from "@/components/Profile";
+import { Button } from "@/components/Button";
 import TodoCard from "./TodoCard";
 
 export default function TodoSection() {
