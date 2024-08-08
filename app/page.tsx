@@ -1,5 +1,9 @@
+import LandingSection from "@/components/LandingSection";
+
 export default function Home() {
   return (
-    <main className="min-h-screen w-full max-w-[1440px] bg-mainbg pt-16"></main>
+    <main className="relative flex h-screen w-full items-center justify-center">
+      <LandingSection />
+    </main>
   );
 }
