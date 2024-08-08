@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import LandingLogo from "./LandingLogo";
 import LoginButton from "./LoginButton";
 
@@ -16,8 +18,11 @@ export default function LandingSection() {
             <p>너의 취업을 응원해</p>
           </h2>
         </aside>
-        <aside>
+        <aside className="flex flex-col items-center gap-2">
           <LoginButton />
+          <Link href="/todo" className="text-xs text-subgray underline">
+            비회원으로 둘러보기
+          </Link>
         </aside>
       </div>
     </section>
