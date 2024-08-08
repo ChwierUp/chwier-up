@@ -1,5 +1,5 @@
 import { CircleUser } from "lucide-react";
-import { Button } from "./Button";
+import { Button } from "./button";
 
 interface ProfileIconProps {
   className?: string;
