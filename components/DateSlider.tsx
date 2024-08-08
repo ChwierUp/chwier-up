@@ -8,7 +8,7 @@ import {
 import { cn } from "@/lib/utils";
 
 import { CalendarDate } from "@/types/calendarDate";
-import { Button } from "./button";
+import { Button } from "./Button";
 
 import "keen-slider/keen-slider.min.css";
 
@@ -62,7 +62,7 @@ export default function DateSlider({
           variant="ghost"
           className={cn(
             "keen-slider__slide w-8 max-w-8 rounded-full p-5 text-lg font-black text-text-200",
-            currentDay === day && "bg-primary-100 text-[#fff]",
+            currentDay === day && "bg-active text-[#fff]",
           )}
           onClick={() => onChangeDate(day)}
         >

@@ -12,10 +12,9 @@ import { useHover } from "@/hooks/useHover";
 import { cn } from "@/lib/utils";
 import { useHandleTodo } from "@/hooks/useHandleTodo";
 
-import { Card, CardContent } from "../card";
-import { Button } from "../button";
-import { Input } from "../input";
-
+import { Card, CardContent } from "@/components/card";
+import { Input } from "@/components/input";
+import { Button } from "@/components/Button";
 import TodoCompleteButton from "./TodoCompleteButton";
 
 import CategorySelector from "./CategorySelector";
@@ -30,7 +29,7 @@ export default function TodoItem() {
       className="flex items-center justify-between gap-3"
       ref={ref as MutableRefObject<HTMLDivElement>}
     >
-      <Card className="flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between shadow-md dark:border-[#616161] dark:bg-[#464650] ">
+      <Card className="flex w-80 max-w-80 grow cursor-pointer flex-row-reverse items-center justify-between bg-subbg shadow-md dark:border-outline dark:bg-subbg">
         <CardContent className="grow p-4">
           {!isEditing ? (
             <div className="flex flex-row-reverse items-center justify-between gap-5">
@@ -47,7 +46,8 @@ export default function TodoItem() {
               <Input
                 type="text"
                 defaultValue="전시회 예매하기"
-                className="dark:border-[#616161] dark:bg-[#464650] dark:placeholder:text-[#C1C1C1]"
+                placeholder="어떤 걸 할 예정인가요?"
+                className="dark:border-outline dark:bg-subbg dark:placeholder:text-[#C1C1C1]"
               />
               <CategorySelector defaultValue="기타" />
             </aside>
