@@ -1,8 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["multiSchema"]
-  provider        = "prisma-client-js"
-  previewFeatures = ["multiSchema"]
 }
 
 datasource db {
@@ -75,10 +73,10 @@ model articles {
   title      String
   url        String
   content    String?
-  category   article_Category
   img_url    String?
   user_name  String
   user_image String
+  category   article_Category
   users      users            @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "articles_user_id_fkey1")
 
   @@schema("public")
@@ -101,17 +99,10 @@ model todos {
 
 /// This enum is commented in the database, and requires an additional setup for migrations: Read more: https://pris.ly/d/database-comments
 enum article_Category {
-  React
-  TypeScript
-  JavaScript
-  Vue
-  Nextjs
-  Nuxtjs
-  Carrer
-  Soft_Skill   @map("Soft Skill")
-  CSS
-  Optimization
-  Clean_Code   @map("Clean Code")
+  dev
+  self_development @map("self-development")
+  recruitment
+  etc
 
   @@map("article Category")
   @@schema("public")
