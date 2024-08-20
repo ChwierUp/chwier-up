@@ -1,5 +1,6 @@
 export type FetchArticlesParams = {
-  keyword: string | number | readonly string[] | undefined;
+  keyword?: string;
+  category?: "" | "develop" | "self_development" | "recruitment" | "etc";
   page?: number;
   limit?: number;
   totalCount?: number;
